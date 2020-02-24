@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<div id="container_fluid" class="container_fluid pos_r">
+		<div class="review container_">
+			<svg version="1.1" class="arrow arrow_left" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 41.999 41.999" style="enable-background:new 0 0 41.999 41.999;" xml:space="preserve"><path d="M36.068,20.176l-29-20C6.761-0.035,6.363-0.057,6.035,0.114C5.706,0.287,5.5,0.627,5.5,0.999v40c0,0.372,0.206,0.713,0.535,0.886c0.146,0.076,0.306,0.114,0.465,0.114c0.199,0,0.397-0.06,0.568-0.177l29-20c0.271-0.187,0.432-0.494,0.432-0.823S36.338,20.363,36.068,20.176z M7.5,39.095V2.904l26.239,18.096L7.5,39.095z"/><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g></svg>
+			<div class="slider">
+				<div id="card_wrap_1" class="card_wrap card_wrap_1"></div>
+				<div id="card_wrap_2" class="card_wrap card_wrap_2"></div>
+				<div id="card_wrap_3" class="card_wrap card_wrap_3"></div>
+			</div>
+			<svg version="1.1" class="arrow arrow_right" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 41.999 41.999" style="enable-background:new 0 0 41.999 41.999;" xml:space="preserve"><path d="M36.068,20.176l-29-20C6.761-0.035,6.363-0.057,6.035,0.114C5.706,0.287,5.5,0.627,5.5,0.999v40c0,0.372,0.206,0.713,0.535,0.886c0.146,0.076,0.306,0.114,0.465,0.114c0.199,0,0.397-0.06,0.568-0.177l29-20c0.271-0.187,0.432-0.494,0.432-0.823S36.338,20.363,36.068,20.176z M7.5,39.095V2.904l26.239,18.096L7.5,39.095z"/><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g></svg>
+		</div>
+		<canvas id="canvas" class="pos_a"></canvas>
+		<div id="review_card_1" class="review_card review_card_mini pos_a">
+			<img src="img/face_1.jpg" alt="face">
+			<div class="review_card_body">
+				<h4>Петро Вертижопко</h4>
+				<p>Lorem ipsum dolor sit amet, ut mei eius nominati repudiare. Solet sanctus dignissim per an, elitr fabulas in vis.</p>
+				<p>Dicit invenire vel eu, vis libris mandamus id, ei vim simul zril placerat. Vim an velit nonumy, sea simul torquatos ut, id sea reque detracto appetere.</p>
+				<p class="review_card_date">14.08.19</p>
+			</div>
+		</div>
+		<div id="review_card_2" class="review_card pos_a">
+			<img src="img/face_1.jpg" alt="face">
+			<div class="review_card_body">
+				<h4>Петро Вертижопко</h4>
+				<p>Lorem ipsum dolor sit amet, ut mei eius nominati repudiare. Solet sanctus dignissim per an, elitr fabulas in vis.</p>
+				<p>Dicit invenire vel eu, vis libris mandamus id, ei vim simul zril placerat. Vim an velit nonumy, sea simul torquatos ut, id sea reque detracto appetere.</p>
+				<p class="review_card_date">14.08.19</p>
+			</div>
+		</div>
+		<div id="review_card_3" class="review_card review_card_mini pos_a">
+			<img src="img/face_1.jpg" alt="face">
+			<div class="review_card_body">
+				<h4>Петро Вертижопко</h4>
+				<p>Lorem ipsum dolor sit amet, ut mei eius nominati repudiare. Solet sanctus dignissim per an, elitr fabulas in vis.</p>
+				<p>Dicit invenire vel eu, vis libris mandamus id, ei vim simul zril placerat. Vim an velit nonumy, sea simul torquatos ut, id sea reque detracto appetere.</p>
+				<p class="review_card_date">14.08.19</p>
+			</div>
+		</div>
+<div id="rez"></div>
+	</div>
+<script>
+
+
+
+var thisSvipe = 2;
+
+var canvas = document.getElementById("canvas");
+var ctx = canvas.getContext('2d');
+
+var card_wrap_1 = document.getElementById("card_wrap_1");
+var card_wrap_2 = document.getElementById("card_wrap_2");
+var card_wrap_3 = document.getElementById("card_wrap_3");
+var review_card_1 = document.getElementById("review_card_1");
+var review_card_2 = document.getElementById("review_card_2");
+var review_card_3 = document.getElementById("review_card_3");
+
+function main() {
+	// console.dir(card_wrap_1.offsetTop);
+	// console.dir(card_wrap_1.offsetLeft);
+	// console.dir(card_wrap_2.offsetTop);
+	// console.dir(card_wrap_2.offsetLeft);
+	// console.dir(card_wrap_3.offsetTop);
+	// console.dir(card_wrap_3.offsetLeft);
+
+	review_card_1.style.top = card_wrap_1.offsetTop + 'px'
+	review_card_1.style.left = card_wrap_1.offsetLeft + 'px'
+
+	review_card_2.style.top = card_wrap_2.offsetTop + 'px'
+	review_card_2.style.left = card_wrap_2.offsetLeft + 'px'
+
+	review_card_3.style.top = card_wrap_3.offsetTop + 'px'
+	review_card_3.style.left = card_wrap_3.offsetLeft + 'px'
+
+	resize();
+
+	function runSlider(direction) {
+	}
+
+}
+
+
+// ctx.clearRect();
+
+
+
+window.addEventListener("resize", resize);
+function resize() {
+	var container_fluid = document.getElementById("container_fluid");
+	canvas.setAttribute('width', container_fluid.offsetWidth)
+	canvas.setAttribute('height', container_fluid.offsetHeight)
+	ctx.strokeStyle = '#61ff00';
+	ctx.lineWidth = '1';
+	ctx.moveTo(card_wrap_1.offsetLeft, card_wrap_1.offsetTop);
+	ctx.lineTo(card_wrap_2.offsetLeft, card_wrap_2.offsetTop);
+	ctx.stroke();
+}
+
+setTimeout(main, 20)
+</script>
+
+<style>
+
+	.pos_r {
+		position: relative;
+	}
+
+	.pos_a {
+		position: absolute;
+	}
+
+	html, body {
+		border: none;
+		box-sizing: border-box;
+		padding: 0;
+		margin: 0;
+	}
+
+	.container_fluid {
+		height: 100vh;
+		background: #000;
+	}
+
+	.container_ {
+		display: flex;
+		align-items: center;
+		height: 100vh;
+		height: 100%;
+		width: 80%;
+		margin: auto;
+	}
+
+	#canvas {
+		top: 0;
+		left: 0;
+	}
+
+	.slider{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		/* position: relative; */
+		width: 85%;
+
+		margin: auto;
+	}
+
+	.arrow_left{
+		transform: rotate(180deg);
+	}
+
+	.card_wrap {
+		box-sizing: border-box;
+		margin: 0;
+	}
+
+	.card_wrap_1 {
+		background: #333;
+		width: 155px;
+		height: 300px;
+		margin-top: 70px;
+		margin-bottom: auto;
+	}
+	
+	.card_wrap_2 {
+		background: #333;
+		width: 245px;
+		height: 400px;
+	}
+	
+	.card_wrap_3 {
+		background: #333;
+		width: 155px;
+		height: 300px;
+		margin-top: 70px;
+		margin-bottom: auto;
+	}
+
+	.review{
+		display: flex;
+		align-items: center;
+	}
+
+	.review_card {
+		transition: all 0.4s ease-in-out;
+		padding: 11px;
+		width: 245px;
+		color: #C4C4C4;
+		border: 1px solid rgba(173, 44, 162, 0.5);
+		box-sizing: border-box;
+	}
+
+	.review_card img {
+		width: 100%;
+	}
+
+	.review_card_body h4 {
+		color: #AD2CA2;
+		font-size: 14px;
+		font-weight: bold;
+	}
+
+	.review_card_date {
+		color: rgba(173, 44, 162, 0.5);
+	}
+
+	.review_card_mini {
+		font-size: 11px;
+		padding: 8px;
+		width: 155px;
+	}
+
+	.review_card_mini h4 {
+		font-size: 11px;
+	}
+
+	.review_card_mini h4 {
+		font-size: 9px;
+	}
+
+	.review_card_mini p {
+		font-size: 9px;
+	}
+
+	.arrow {
+		fill: #61ff00;
+		width: 10px;
+		height: 13px;
+	}
+
+</style>
+
+</body>
+</html>
