@@ -8,13 +8,15 @@
 <body>
 	<div id="container_fluid" class="container_fluid pos_r">
 		<div class="review container_">
-			<svg version="1.1" class="arrow arrow_left" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 41.999 41.999" style="enable-background:new 0 0 41.999 41.999;" xml:space="preserve"><path d="M36.068,20.176l-29-20C6.761-0.035,6.363-0.057,6.035,0.114C5.706,0.287,5.5,0.627,5.5,0.999v40c0,0.372,0.206,0.713,0.535,0.886c0.146,0.076,0.306,0.114,0.465,0.114c0.199,0,0.397-0.06,0.568-0.177l29-20c0.271-0.187,0.432-0.494,0.432-0.823S36.338,20.363,36.068,20.176z M7.5,39.095V2.904l26.239,18.096L7.5,39.095z"/><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g></svg>
+			<div onclick="runSlider('left')" class="WrapArrow"><svg version="1.1" class="arrow arrow_left" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 41.999 41.999" style="enable-background:new 0 0 41.999 41.999;" xml:space="preserve"><path d="M36.068,20.176l-29-20C6.761-0.035,6.363-0.057,6.035,0.114C5.706,0.287,5.5,0.627,5.5,0.999v40c0,0.372,0.206,0.713,0.535,0.886c0.146,0.076,0.306,0.114,0.465,0.114c0.199,0,0.397-0.06,0.568-0.177l29-20c0.271-0.187,0.432-0.494,0.432-0.823S36.338,20.363,36.068,20.176z M7.5,39.095V2.904l26.239,18.096L7.5,39.095z"/><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g></svg></div>
+			
 			<div class="slider">
 				<div id="card_wrap_1" class="card_wrap card_wrap_1"></div>
 				<div id="card_wrap_2" class="card_wrap card_wrap_2"></div>
 				<div id="card_wrap_3" class="card_wrap card_wrap_3"></div>
 			</div>
-			<svg version="1.1" class="arrow arrow_right" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 41.999 41.999" style="enable-background:new 0 0 41.999 41.999;" xml:space="preserve"><path d="M36.068,20.176l-29-20C6.761-0.035,6.363-0.057,6.035,0.114C5.706,0.287,5.5,0.627,5.5,0.999v40c0,0.372,0.206,0.713,0.535,0.886c0.146,0.076,0.306,0.114,0.465,0.114c0.199,0,0.397-0.06,0.568-0.177l29-20c0.271-0.187,0.432-0.494,0.432-0.823S36.338,20.363,36.068,20.176z M7.5,39.095V2.904l26.239,18.096L7.5,39.095z"/><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g></svg>
+			<div onclick="runSlider('right')" class="WrapArrow"><svg version="1.1" class="arrow arrow_right" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 41.999 41.999" style="enable-background:new 0 0 41.999 41.999;" xml:space="preserve"><path d="M36.068,20.176l-29-20C6.761-0.035,6.363-0.057,6.035,0.114C5.706,0.287,5.5,0.627,5.5,0.999v40c0,0.372,0.206,0.713,0.535,0.886c0.146,0.076,0.306,0.114,0.465,0.114c0.199,0,0.397-0.06,0.568-0.177l29-20c0.271-0.187,0.432-0.494,0.432-0.823S36.338,20.363,36.068,20.176z M7.5,39.095V2.904l26.239,18.096L7.5,39.095z"/><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g></svg></div>
+			
 		</div>
 		<canvas id="canvas" class="pos_a"></canvas>
 		<div id="review_card_1" class="review_card review_card_mini pos_a">
@@ -58,9 +60,25 @@ var ctx = canvas.getContext('2d');
 var card_wrap_1 = document.getElementById("card_wrap_1");
 var card_wrap_2 = document.getElementById("card_wrap_2");
 var card_wrap_3 = document.getElementById("card_wrap_3");
+
 var review_card_1 = document.getElementById("review_card_1");
 var review_card_2 = document.getElementById("review_card_2");
 var review_card_3 = document.getElementById("review_card_3");
+
+var arrow_left = document.getElementById("arrow_left");
+var arrow_right = document.getElementById("arrow_right");
+
+
+function funSetIntervalTurbo() {
+	var varSetIntervalTurbo = setInterval(() => {resize(); console.log(2);
+	}, 20);
+	// varSetIntervalTurbo();
+	setTimeout(() => {
+		clearInterval(varSetIntervalTurbo);
+	}, 555)
+}
+
+var container_fluid;
 
 function main() {
 	// console.dir(card_wrap_1.offsetTop);
@@ -69,6 +87,9 @@ function main() {
 	// console.dir(card_wrap_2.offsetLeft);
 	// console.dir(card_wrap_3.offsetTop);
 	// console.dir(card_wrap_3.offsetLeft);
+	// arrow_left.addEventListener('click', () => { console.log(3)});
+	// arrow_left.addEventListener('click', () => { console.log(3); runSlider('left')});
+	// arrow_right.addEventListener('click', runSlider('right'));
 
 	review_card_1.style.top = card_wrap_1.offsetTop + 'px'
 	review_card_1.style.left = card_wrap_1.offsetLeft + 'px'
@@ -79,13 +100,52 @@ function main() {
 	review_card_3.style.top = card_wrap_3.offsetTop + 'px'
 	review_card_3.style.left = card_wrap_3.offsetLeft + 'px'
 
+	container_fluid = document.getElementById("container_fluid");
+
 	resize();
 
-	function runSlider(direction) {
-	}
 
 }
 
+	function runSlider(direction) {
+		funSetIntervalTurbo()
+		if (direction == 'left') {
+			thisSvipe -= 1;
+		}
+		if (direction == 'right') {
+			thisSvipe += 1;
+		}
+		if (thisSvipe == 1) {
+			// review_card_1.style.top = card_wrap_1.offsetTop + 'px'
+			// review_card_1.style.left = card_wrap_1.offsetLeft + 'px'
+
+			review_card_2.style.top = card_wrap_1.offsetTop + 'px'
+			review_card_2.style.left = card_wrap_1.offsetLeft + 'px'
+
+			review_card_3.style.top = card_wrap_2.offsetTop + 'px'
+			review_card_3.style.left = card_wrap_2.offsetLeft + 'px'
+		}
+		if (thisSvipe == 2) {
+			review_card_1.style.top = card_wrap_1.offsetTop + 'px'
+			review_card_1.style.left = card_wrap_1.offsetLeft + 'px'
+
+			review_card_2.style.top = card_wrap_2.offsetTop + 'px'
+			review_card_2.style.left = card_wrap_2.offsetLeft + 'px'
+
+			review_card_3.style.top = card_wrap_3.offsetTop + 'px'
+			review_card_3.style.left = card_wrap_3.offsetLeft + 'px'
+		}
+		if (thisSvipe == 3) {
+			review_card_1.style.top = card_wrap_2.offsetTop + 'px'
+			review_card_1.style.left = card_wrap_2.offsetLeft + 'px'
+
+			review_card_2.style.top = card_wrap_3.offsetTop + 'px'
+			review_card_2.style.left = card_wrap_3.offsetLeft + 'px'
+
+			// review_card_3.style.top = card_wrap_4.offsetTop + 'px'
+			// review_card_3.style.left = card_wrap_4.offsetLeft + 'px'
+		}
+	}
 
 // ctx.clearRect();
 
@@ -93,15 +153,41 @@ function main() {
 
 window.addEventListener("resize", resize);
 function resize() {
-	var container_fluid = document.getElementById("container_fluid");
+
 	canvas.setAttribute('width', container_fluid.offsetWidth)
 	canvas.setAttribute('height', container_fluid.offsetHeight)
 	ctx.strokeStyle = '#61ff00';
 	ctx.lineWidth = '1';
-	ctx.moveTo(card_wrap_1.offsetLeft, card_wrap_1.offsetTop);
-	ctx.lineTo(card_wrap_2.offsetLeft, card_wrap_2.offsetTop);
+	ctx.moveTo(review_card_1.offsetLeft, review_card_1.offsetTop);
+	ctx.lineTo(review_card_2.offsetLeft, review_card_2.offsetTop);
+	ctx.stroke();
+	ctx.moveTo(review_card_1.offsetLeft + review_card_1.offsetWidth, review_card_1.offsetTop + review_card_1.offsetHeight);
+	ctx.lineTo(review_card_2.offsetLeft + review_card_2.offsetWidth, review_card_2.offsetTop + review_card_2.offsetHeight);
+	ctx.stroke();
+	ctx.moveTo(review_card_1.offsetLeft + review_card_1.offsetWidth, review_card_1.offsetTop);
+	ctx.lineTo(review_card_2.offsetLeft + review_card_2.offsetWidth, review_card_2.offsetTop);
+	ctx.stroke();
+	ctx.moveTo(review_card_1.offsetLeft, review_card_1.offsetTop + review_card_1.offsetHeight);
+	ctx.lineTo(review_card_2.offsetLeft, review_card_2.offsetTop + review_card_2.offsetHeight);
+	ctx.stroke();
+
+	ctx.moveTo(review_card_2.offsetLeft, review_card_2.offsetTop);
+	ctx.lineTo(review_card_3.offsetLeft, review_card_3.offsetTop);
+	ctx.stroke();
+	ctx.moveTo(review_card_2.offsetLeft + review_card_2.offsetWidth, review_card_2.offsetTop + review_card_2.offsetHeight);
+	ctx.lineTo(review_card_3.offsetLeft + review_card_3.offsetWidth, review_card_3.offsetTop + review_card_3.offsetHeight);
+	ctx.stroke();
+	ctx.moveTo(review_card_2.offsetLeft + review_card_2.offsetWidth, review_card_2.offsetTop);
+	ctx.lineTo(review_card_3.offsetLeft + review_card_3.offsetWidth, review_card_3.offsetTop);
+	ctx.stroke();
+	ctx.moveTo(review_card_2.offsetLeft, review_card_2.offsetTop + review_card_2.offsetHeight);
+	ctx.lineTo(review_card_3.offsetLeft, review_card_3.offsetTop + review_card_3.offsetHeight);
 	ctx.stroke();
 }
+
+setInterval(() => {
+	resize()
+}, 222);
 
 setTimeout(main, 20)
 </script>
@@ -162,7 +248,7 @@ setTimeout(main, 20)
 	}
 
 	.card_wrap_1 {
-		background: #333;
+		/* background: #333; */
 		width: 155px;
 		height: 300px;
 		margin-top: 70px;
@@ -170,13 +256,13 @@ setTimeout(main, 20)
 	}
 	
 	.card_wrap_2 {
-		background: #333;
+		/* background: #333; */
 		width: 245px;
 		height: 400px;
 	}
 	
 	.card_wrap_3 {
-		background: #333;
+		/* background: #333; */
 		width: 155px;
 		height: 300px;
 		margin-top: 70px;
@@ -189,12 +275,13 @@ setTimeout(main, 20)
 	}
 
 	.review_card {
-		transition: all 0.4s ease-in-out;
 		padding: 11px;
 		width: 245px;
 		color: #C4C4C4;
 		border: 1px solid rgba(173, 44, 162, 0.5);
+		transition: all 0.5s ease-in-out;
 		box-sizing: border-box;
+		background: #000;
 	}
 
 	.review_card img {
@@ -229,6 +316,12 @@ setTimeout(main, 20)
 		font-size: 9px;
 	}
 
+	.WrapArrow {
+		padding: 10px;
+		box-sizing: border-box;
+		z-index: 3;
+		background: #444;
+	}
 	.arrow {
 		fill: #61ff00;
 		width: 10px;
