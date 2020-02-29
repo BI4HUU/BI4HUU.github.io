@@ -22,7 +22,7 @@
 		<div id="review_card_1" class="review_card review_card_mini pos_a">
 			<img src="img/face_1.jpg" alt="face">
 			<div class="review_card_body">
-				<h4>Петро Вертижопко</h4>
+				<h4>Петро Вертижопко1</h4>
 				<p>Lorem ipsum dolor sit amet, ut mei eius nominati repudiare. Solet sanctus dignissim per an, elitr fabulas in vis.</p>
 				<p>Dicit invenire vel eu, vis libris mandamus id, ei vim simul zril placerat. Vim an velit nonumy, sea simul torquatos ut, id sea reque detracto appetere.</p>
 				<p class="review_card_date">14.08.19</p>
@@ -31,7 +31,7 @@
 		<div id="review_card_2" class="review_card pos_a">
 			<img src="img/face_1.jpg" alt="face">
 			<div class="review_card_body">
-				<h4>Петро Вертижопко</h4>
+				<h4>Петро Вертижопко2</h4>
 				<p>Lorem ipsum dolor sit amet, ut mei eius nominati repudiare. Solet sanctus dignissim per an, elitr fabulas in vis.</p>
 				<p>Dicit invenire vel eu, vis libris mandamus id, ei vim simul zril placerat. Vim an velit nonumy, sea simul torquatos ut, id sea reque detracto appetere.</p>
 				<p class="review_card_date">14.08.19</p>
@@ -40,7 +40,25 @@
 		<div id="review_card_3" class="review_card review_card_mini pos_a">
 			<img src="img/face_1.jpg" alt="face">
 			<div class="review_card_body">
-				<h4>Петро Вертижопко</h4>
+				<h4>Петро Вертижопко3</h4>
+				<p>Lorem ipsum dolor sit amet, ut mei eius nominati repudiare. Solet sanctus dignissim per an, elitr fabulas in vis.</p>
+				<p>Dicit invenire vel eu, vis libris mandamus id, ei vim simul zril placerat. Vim an velit nonumy, sea simul torquatos ut, id sea reque detracto appetere.</p>
+				<p class="review_card_date">14.08.19</p>
+			</div>
+		</div>
+		<div id="review_card_4" class="review_card review_card_mini pos_a">
+			<img src="img/face_1.jpg" alt="face">
+			<div class="review_card_body">
+				<h4>Петро Вертижопко4</h4>
+				<p>Lorem ipsum dolor sit amet, ut mei eius nominati repudiare. Solet sanctus dignissim per an, elitr fabulas in vis.</p>
+				<p>Dicit invenire vel eu, vis libris mandamus id, ei vim simul zril placerat. Vim an velit nonumy, sea simul torquatos ut, id sea reque detracto appetere.</p>
+				<p class="review_card_date">14.08.19</p>
+			</div>
+		</div>
+		<div id="review_card_5" class="review_card review_card_mini pos_a">
+			<img src="img/face_1.jpg" alt="face">
+			<div class="review_card_body">
+				<h4>Петро Вертижопко5</h4>
 				<p>Lorem ipsum dolor sit amet, ut mei eius nominati repudiare. Solet sanctus dignissim per an, elitr fabulas in vis.</p>
 				<p>Dicit invenire vel eu, vis libris mandamus id, ei vim simul zril placerat. Vim an velit nonumy, sea simul torquatos ut, id sea reque detracto appetere.</p>
 				<p class="review_card_date">14.08.19</p>
@@ -53,6 +71,7 @@
 
 
 var thisSvipe = 2;
+var zIndex = 1;
 
 var canvas = document.getElementById("canvas");
 var ctx = canvas.getContext('2d');
@@ -64,6 +83,8 @@ var card_wrap_3 = document.getElementById("card_wrap_3");
 var review_card_1 = document.getElementById("review_card_1");
 var review_card_2 = document.getElementById("review_card_2");
 var review_card_3 = document.getElementById("review_card_3");
+var review_card_4 = document.getElementById("review_card_4");
+var review_card_5 = document.getElementById("review_card_5");
 
 var arrow_left = document.getElementById("arrow_left");
 var arrow_right = document.getElementById("arrow_right");
@@ -71,11 +92,11 @@ var arrow_right = document.getElementById("arrow_right");
 
 function funSetIntervalTurbo() {
 	var varSetIntervalTurbo = setInterval(() => {resize(); console.log(2);
-	}, 20);
+	}, 12);
 	// varSetIntervalTurbo();
 	setTimeout(() => {
 		clearInterval(varSetIntervalTurbo);
-	}, 555)
+	}, 888)
 }
 
 var container_fluid;
@@ -108,6 +129,7 @@ function main() {
 }
 
 	function runSlider(direction) {
+		zIndex += 1;
 		funSetIntervalTurbo()
 		if (direction == 'left') {
 			thisSvipe -= 1;
@@ -116,34 +138,75 @@ function main() {
 			thisSvipe += 1;
 		}
 		if (thisSvipe == 1) {
-			// review_card_1.style.top = card_wrap_1.offsetTop + 'px'
-			// review_card_1.style.left = card_wrap_1.offsetLeft + 'px'
 
-			review_card_2.style.top = card_wrap_1.offsetTop + 'px'
-			review_card_2.style.left = card_wrap_1.offsetLeft + 'px'
+			review_card_1.style.top = card_wrap_2.offsetTop + 'px'
+			review_card_1.style.left = card_wrap_2.offsetLeft + 'px'
+			review_card_1.style.zIndex = zIndex;
+			review_card_1.classList.remove("review_card_mini");
 
-			review_card_3.style.top = card_wrap_2.offsetTop + 'px'
-			review_card_3.style.left = card_wrap_2.offsetLeft + 'px'
+			review_card_2.style.top = card_wrap_3.offsetTop + 'px'
+			review_card_2.style.left = card_wrap_3.offsetLeft + 'px'
+			review_card_2.style.zIndex = zIndex;
+			review_card_2.classList.add("review_card_mini");
 		}
 		if (thisSvipe == 2) {
 			review_card_1.style.top = card_wrap_1.offsetTop + 'px'
 			review_card_1.style.left = card_wrap_1.offsetLeft + 'px'
+			review_card_1.style.zIndex = zIndex;
+			review_card_1.classList.add("review_card_mini");
 
 			review_card_2.style.top = card_wrap_2.offsetTop + 'px'
 			review_card_2.style.left = card_wrap_2.offsetLeft + 'px'
+			review_card_2.style.zIndex = zIndex;
+			review_card_2.classList.remove("review_card_mini");
 
 			review_card_3.style.top = card_wrap_3.offsetTop + 'px'
 			review_card_3.style.left = card_wrap_3.offsetLeft + 'px'
+			review_card_3.style.zIndex = zIndex;
+			review_card_3.classList.add("review_card_mini");
 		}
 		if (thisSvipe == 3) {
-			review_card_1.style.top = card_wrap_2.offsetTop + 'px'
-			review_card_1.style.left = card_wrap_2.offsetLeft + 'px'
+			review_card_2.style.top = card_wrap_1.offsetTop + 'px'
+			review_card_2.style.left = card_wrap_1.offsetLeft + 'px'
+			review_card_2.style.zIndex = zIndex;
+			review_card_2.classList.add("review_card_mini");
 
-			review_card_2.style.top = card_wrap_3.offsetTop + 'px'
-			review_card_2.style.left = card_wrap_3.offsetLeft + 'px'
+			review_card_3.style.top = card_wrap_2.offsetTop + 'px'
+			review_card_3.style.left = card_wrap_2.offsetLeft + 'px'
+			review_card_3.style.zIndex = zIndex;
+			review_card_3.classList.remove("review_card_mini");
 
-			// review_card_3.style.top = card_wrap_4.offsetTop + 'px'
-			// review_card_3.style.left = card_wrap_4.offsetLeft + 'px'
+			review_card_4.style.top = card_wrap_3.offsetTop + 'px'
+			review_card_4.style.left = card_wrap_3.offsetLeft + 'px'
+			review_card_4.style.zIndex = zIndex;
+			review_card_4.classList.add("review_card_mini");
+		}
+		if (thisSvipe == 4) {
+			review_card_3.style.top = card_wrap_1.offsetTop + 'px'
+			review_card_3.style.left = card_wrap_1.offsetLeft + 'px'
+			review_card_3.style.zIndex = zIndex;
+			review_card_3.classList.add("review_card_mini");
+
+			review_card_4.style.top = card_wrap_2.offsetTop + 'px'
+			review_card_4.style.left = card_wrap_2.offsetLeft + 'px'
+			review_card_4.style.zIndex = zIndex;
+			review_card_4.classList.remove("review_card_mini");
+
+			review_card_5.style.top = card_wrap_3.offsetTop + 'px'
+			review_card_5.style.left = card_wrap_3.offsetLeft + 'px'
+			review_card_5.style.zIndex = zIndex;
+			review_card_5.classList.add("review_card_mini");
+		}
+		if (thisSvipe == 5) {
+			review_card_4.style.top = card_wrap_1.offsetTop + 'px'
+			review_card_4.style.left = card_wrap_1.offsetLeft + 'px'
+			review_card_4.style.zIndex = zIndex;
+			review_card_4.classList.add("review_card_mini");
+
+			review_card_5.style.top = card_wrap_2.offsetTop + 'px'
+			review_card_5.style.left = card_wrap_2.offsetLeft + 'px'
+			review_card_5.style.zIndex = zIndex;
+			review_card_5.classList.remove("review_card_mini");
 		}
 	}
 
@@ -154,35 +217,172 @@ function main() {
 window.addEventListener("resize", resize);
 function resize() {
 
-	canvas.setAttribute('width', container_fluid.offsetWidth)
-	canvas.setAttribute('height', container_fluid.offsetHeight)
+	canvas.setAttribute('width', container_fluid.offsetWidth);
+	canvas.setAttribute('height', container_fluid.offsetHeight);
 	ctx.strokeStyle = '#61ff00';
 	ctx.lineWidth = '1';
-	ctx.moveTo(review_card_1.offsetLeft, review_card_1.offsetTop);
-	ctx.lineTo(review_card_2.offsetLeft, review_card_2.offsetTop);
-	ctx.stroke();
-	ctx.moveTo(review_card_1.offsetLeft + review_card_1.offsetWidth, review_card_1.offsetTop + review_card_1.offsetHeight);
-	ctx.lineTo(review_card_2.offsetLeft + review_card_2.offsetWidth, review_card_2.offsetTop + review_card_2.offsetHeight);
-	ctx.stroke();
-	ctx.moveTo(review_card_1.offsetLeft + review_card_1.offsetWidth, review_card_1.offsetTop);
-	ctx.lineTo(review_card_2.offsetLeft + review_card_2.offsetWidth, review_card_2.offsetTop);
-	ctx.stroke();
-	ctx.moveTo(review_card_1.offsetLeft, review_card_1.offsetTop + review_card_1.offsetHeight);
-	ctx.lineTo(review_card_2.offsetLeft, review_card_2.offsetTop + review_card_2.offsetHeight);
-	ctx.stroke();
 
-	ctx.moveTo(review_card_2.offsetLeft, review_card_2.offsetTop);
-	ctx.lineTo(review_card_3.offsetLeft, review_card_3.offsetTop);
-	ctx.stroke();
-	ctx.moveTo(review_card_2.offsetLeft + review_card_2.offsetWidth, review_card_2.offsetTop + review_card_2.offsetHeight);
-	ctx.lineTo(review_card_3.offsetLeft + review_card_3.offsetWidth, review_card_3.offsetTop + review_card_3.offsetHeight);
-	ctx.stroke();
-	ctx.moveTo(review_card_2.offsetLeft + review_card_2.offsetWidth, review_card_2.offsetTop);
-	ctx.lineTo(review_card_3.offsetLeft + review_card_3.offsetWidth, review_card_3.offsetTop);
-	ctx.stroke();
-	ctx.moveTo(review_card_2.offsetLeft, review_card_2.offsetTop + review_card_2.offsetHeight);
-	ctx.lineTo(review_card_3.offsetLeft, review_card_3.offsetTop + review_card_3.offsetHeight);
-	ctx.stroke();
+	if (thisSvipe == 1) {
+		ctx.moveTo(review_card_1.offsetLeft, review_card_1.offsetTop);
+		ctx.lineTo(review_card_2.offsetLeft, review_card_2.offsetTop);
+		ctx.stroke();
+		ctx.moveTo(review_card_1.offsetLeft + review_card_1.offsetWidth, review_card_1.offsetTop + review_card_1.offsetHeight);
+		ctx.lineTo(review_card_2.offsetLeft + review_card_2.offsetWidth, review_card_2.offsetTop + review_card_2.offsetHeight);
+		ctx.stroke();
+		ctx.moveTo(review_card_1.offsetLeft + review_card_1.offsetWidth, review_card_1.offsetTop);
+		ctx.lineTo(review_card_2.offsetLeft + review_card_2.offsetWidth, review_card_2.offsetTop);
+		ctx.stroke();
+		ctx.moveTo(review_card_1.offsetLeft, review_card_1.offsetTop + review_card_1.offsetHeight);
+		ctx.lineTo(review_card_2.offsetLeft, review_card_2.offsetTop + review_card_2.offsetHeight);
+		ctx.stroke();
+
+		ctx.moveTo(review_card_2.offsetLeft, review_card_2.offsetTop);
+		ctx.lineTo(review_card_3.offsetLeft, review_card_3.offsetTop);
+		ctx.stroke();
+		ctx.moveTo(review_card_2.offsetLeft + review_card_2.offsetWidth, review_card_2.offsetTop + review_card_2.offsetHeight);
+		ctx.lineTo(review_card_3.offsetLeft + review_card_3.offsetWidth, review_card_3.offsetTop + review_card_3.offsetHeight);
+		ctx.stroke();
+		ctx.moveTo(review_card_2.offsetLeft + review_card_2.offsetWidth, review_card_2.offsetTop);
+		ctx.lineTo(review_card_3.offsetLeft + review_card_3.offsetWidth, review_card_3.offsetTop);
+		ctx.stroke();
+		ctx.moveTo(review_card_2.offsetLeft, review_card_2.offsetTop + review_card_2.offsetHeight);
+		ctx.lineTo(review_card_3.offsetLeft, review_card_3.offsetTop + review_card_3.offsetHeight);
+		ctx.stroke();
+	}
+	if (thisSvipe == 2) {
+		ctx.moveTo(review_card_1.offsetLeft, review_card_1.offsetTop);
+		ctx.lineTo(review_card_2.offsetLeft, review_card_2.offsetTop);
+		ctx.stroke();
+		ctx.moveTo(review_card_1.offsetLeft + review_card_1.offsetWidth, review_card_1.offsetTop + review_card_1.offsetHeight);
+		ctx.lineTo(review_card_2.offsetLeft + review_card_2.offsetWidth, review_card_2.offsetTop + review_card_2.offsetHeight);
+		ctx.stroke();
+		ctx.moveTo(review_card_1.offsetLeft + review_card_1.offsetWidth, review_card_1.offsetTop);
+		ctx.lineTo(review_card_2.offsetLeft + review_card_2.offsetWidth, review_card_2.offsetTop);
+		ctx.stroke();
+		ctx.moveTo(review_card_1.offsetLeft, review_card_1.offsetTop + review_card_1.offsetHeight);
+		ctx.lineTo(review_card_2.offsetLeft, review_card_2.offsetTop + review_card_2.offsetHeight);
+		ctx.stroke();
+
+		ctx.moveTo(review_card_2.offsetLeft, review_card_2.offsetTop);
+		ctx.lineTo(review_card_3.offsetLeft, review_card_3.offsetTop);
+		ctx.stroke();
+		ctx.moveTo(review_card_2.offsetLeft + review_card_2.offsetWidth, review_card_2.offsetTop + review_card_2.offsetHeight);
+		ctx.lineTo(review_card_3.offsetLeft + review_card_3.offsetWidth, review_card_3.offsetTop + review_card_3.offsetHeight);
+		ctx.stroke();
+		ctx.moveTo(review_card_2.offsetLeft + review_card_2.offsetWidth, review_card_2.offsetTop);
+		ctx.lineTo(review_card_3.offsetLeft + review_card_3.offsetWidth, review_card_3.offsetTop);
+		ctx.stroke();
+		ctx.moveTo(review_card_2.offsetLeft, review_card_2.offsetTop + review_card_2.offsetHeight);
+		ctx.lineTo(review_card_3.offsetLeft, review_card_3.offsetTop + review_card_3.offsetHeight);
+		ctx.stroke();
+	}
+	if (thisSvipe == 3) {
+		ctx.moveTo(review_card_1.offsetLeft, review_card_1.offsetTop);
+		ctx.lineTo(review_card_2.offsetLeft, review_card_2.offsetTop);
+		ctx.stroke();
+		ctx.moveTo(review_card_1.offsetLeft + review_card_1.offsetWidth, review_card_1.offsetTop + review_card_1.offsetHeight);
+		ctx.lineTo(review_card_2.offsetLeft + review_card_2.offsetWidth, review_card_2.offsetTop + review_card_2.offsetHeight);
+		ctx.stroke();
+		ctx.moveTo(review_card_1.offsetLeft + review_card_1.offsetWidth, review_card_1.offsetTop);
+		ctx.lineTo(review_card_2.offsetLeft + review_card_2.offsetWidth, review_card_2.offsetTop);
+		ctx.stroke();
+		ctx.moveTo(review_card_1.offsetLeft, review_card_1.offsetTop + review_card_1.offsetHeight);
+		ctx.lineTo(review_card_2.offsetLeft, review_card_2.offsetTop + review_card_2.offsetHeight);
+		ctx.stroke();
+
+		ctx.moveTo(review_card_2.offsetLeft, review_card_2.offsetTop);
+		ctx.lineTo(review_card_3.offsetLeft, review_card_3.offsetTop);
+		ctx.stroke();
+		ctx.moveTo(review_card_2.offsetLeft + review_card_2.offsetWidth, review_card_2.offsetTop + review_card_2.offsetHeight);
+		ctx.lineTo(review_card_3.offsetLeft + review_card_3.offsetWidth, review_card_3.offsetTop + review_card_3.offsetHeight);
+		ctx.stroke();
+		ctx.moveTo(review_card_2.offsetLeft + review_card_2.offsetWidth, review_card_2.offsetTop);
+		ctx.lineTo(review_card_3.offsetLeft + review_card_3.offsetWidth, review_card_3.offsetTop);
+		ctx.stroke();
+		ctx.moveTo(review_card_2.offsetLeft, review_card_2.offsetTop + review_card_2.offsetHeight);
+		ctx.lineTo(review_card_3.offsetLeft, review_card_3.offsetTop + review_card_3.offsetHeight);
+		ctx.stroke();
+
+		ctx.moveTo(review_card_3.offsetLeft, review_card_3.offsetTop);
+		ctx.lineTo(review_card_4.offsetLeft, review_card_4.offsetTop);
+		ctx.stroke();
+		ctx.moveTo(review_card_3.offsetLeft + review_card_3.offsetWidth, review_card_3.offsetTop + review_card_3.offsetHeight);
+		ctx.lineTo(review_card_4.offsetLeft + review_card_4.offsetWidth, review_card_4.offsetTop + review_card_4.offsetHeight);
+		ctx.stroke();
+		ctx.moveTo(review_card_3.offsetLeft + review_card_3.offsetWidth, review_card_3.offsetTop);
+		ctx.lineTo(review_card_4.offsetLeft + review_card_4.offsetWidth, review_card_4.offsetTop);
+		ctx.stroke();
+		ctx.moveTo(review_card_3.offsetLeft, review_card_3.offsetTop + review_card_3.offsetHeight);
+		ctx.lineTo(review_card_4.offsetLeft, review_card_4.offsetTop + review_card_4.offsetHeight);
+		ctx.stroke();
+	}
+	if (thisSvipe == 4) {
+		ctx.moveTo(review_card_2.offsetLeft, review_card_2.offsetTop);
+		ctx.lineTo(review_card_3.offsetLeft, review_card_3.offsetTop);
+		ctx.stroke();
+		ctx.moveTo(review_card_2.offsetLeft + review_card_2.offsetWidth, review_card_2.offsetTop + review_card_2.offsetHeight);
+		ctx.lineTo(review_card_3.offsetLeft + review_card_3.offsetWidth, review_card_3.offsetTop + review_card_3.offsetHeight);
+		ctx.stroke();
+		ctx.moveTo(review_card_2.offsetLeft + review_card_2.offsetWidth, review_card_2.offsetTop);
+		ctx.lineTo(review_card_3.offsetLeft + review_card_3.offsetWidth, review_card_3.offsetTop);
+		ctx.stroke();
+		ctx.moveTo(review_card_2.offsetLeft, review_card_2.offsetTop + review_card_2.offsetHeight);
+		ctx.lineTo(review_card_3.offsetLeft, review_card_3.offsetTop + review_card_3.offsetHeight);
+		ctx.stroke();
+
+		ctx.moveTo(review_card_3.offsetLeft, review_card_3.offsetTop);
+		ctx.lineTo(review_card_4.offsetLeft, review_card_4.offsetTop);
+		ctx.stroke();
+		ctx.moveTo(review_card_3.offsetLeft + review_card_3.offsetWidth, review_card_3.offsetTop + review_card_3.offsetHeight);
+		ctx.lineTo(review_card_4.offsetLeft + review_card_4.offsetWidth, review_card_4.offsetTop + review_card_4.offsetHeight);
+		ctx.stroke();
+		ctx.moveTo(review_card_3.offsetLeft + review_card_3.offsetWidth, review_card_3.offsetTop);
+		ctx.lineTo(review_card_4.offsetLeft + review_card_4.offsetWidth, review_card_4.offsetTop);
+		ctx.stroke();
+		ctx.moveTo(review_card_3.offsetLeft, review_card_3.offsetTop + review_card_3.offsetHeight);
+		ctx.lineTo(review_card_4.offsetLeft, review_card_4.offsetTop + review_card_4.offsetHeight);
+		ctx.stroke();
+
+		ctx.moveTo(review_card_4.offsetLeft, review_card_4.offsetTop);
+		ctx.lineTo(review_card_5.offsetLeft, review_card_5.offsetTop);
+		ctx.stroke();
+		ctx.moveTo(review_card_4.offsetLeft + review_card_4.offsetWidth, review_card_4.offsetTop + review_card_4.offsetHeight);
+		ctx.lineTo(review_card_5.offsetLeft + review_card_5.offsetWidth, review_card_5.offsetTop + review_card_5.offsetHeight);
+		ctx.stroke();
+		ctx.moveTo(review_card_4.offsetLeft + review_card_4.offsetWidth, review_card_4.offsetTop);
+		ctx.lineTo(review_card_5.offsetLeft + review_card_5.offsetWidth, review_card_5.offsetTop);
+		ctx.stroke();
+		ctx.moveTo(review_card_4.offsetLeft, review_card_4.offsetTop + review_card_4.offsetHeight);
+		ctx.lineTo(review_card_5.offsetLeft, review_card_5.offsetTop + review_card_5.offsetHeight);
+		ctx.stroke();
+	}
+	if (thisSvipe == 5) {
+		ctx.moveTo(review_card_3.offsetLeft, review_card_3.offsetTop);
+		ctx.lineTo(review_card_4.offsetLeft, review_card_4.offsetTop);
+		ctx.stroke();
+		ctx.moveTo(review_card_3.offsetLeft + review_card_3.offsetWidth, review_card_3.offsetTop + review_card_3.offsetHeight);
+		ctx.lineTo(review_card_4.offsetLeft + review_card_4.offsetWidth, review_card_4.offsetTop + review_card_4.offsetHeight);
+		ctx.stroke();
+		ctx.moveTo(review_card_3.offsetLeft + review_card_3.offsetWidth, review_card_3.offsetTop);
+		ctx.lineTo(review_card_4.offsetLeft + review_card_4.offsetWidth, review_card_4.offsetTop);
+		ctx.stroke();
+		ctx.moveTo(review_card_3.offsetLeft, review_card_3.offsetTop + review_card_3.offsetHeight);
+		ctx.lineTo(review_card_4.offsetLeft, review_card_4.offsetTop + review_card_4.offsetHeight);
+		ctx.stroke();
+
+		ctx.moveTo(review_card_4.offsetLeft, review_card_4.offsetTop);
+		ctx.lineTo(review_card_5.offsetLeft, review_card_5.offsetTop);
+		ctx.stroke();
+		ctx.moveTo(review_card_4.offsetLeft + review_card_4.offsetWidth, review_card_4.offsetTop + review_card_4.offsetHeight);
+		ctx.lineTo(review_card_5.offsetLeft + review_card_5.offsetWidth, review_card_5.offsetTop + review_card_5.offsetHeight);
+		ctx.stroke();
+		ctx.moveTo(review_card_4.offsetLeft + review_card_4.offsetWidth, review_card_4.offsetTop);
+		ctx.lineTo(review_card_5.offsetLeft + review_card_5.offsetWidth, review_card_5.offsetTop);
+		ctx.stroke();
+		ctx.moveTo(review_card_4.offsetLeft, review_card_4.offsetTop + review_card_4.offsetHeight);
+		ctx.lineTo(review_card_5.offsetLeft, review_card_5.offsetTop + review_card_5.offsetHeight);
+		ctx.stroke();
+	}
 }
 
 setInterval(() => {
@@ -248,21 +448,18 @@ setTimeout(main, 20)
 	}
 
 	.card_wrap_1 {
-		/* background: #333; */
 		width: 155px;
 		height: 300px;
 		margin-top: 70px;
 		margin-bottom: auto;
 	}
-	
+
 	.card_wrap_2 {
-		/* background: #333; */
 		width: 245px;
 		height: 400px;
 	}
-	
+
 	.card_wrap_3 {
-		/* background: #333; */
 		width: 155px;
 		height: 300px;
 		margin-top: 70px;
@@ -273,13 +470,13 @@ setTimeout(main, 20)
 		display: flex;
 		align-items: center;
 	}
-
+	 
 	.review_card {
 		padding: 11px;
 		width: 245px;
 		color: #C4C4C4;
 		border: 1px solid rgba(173, 44, 162, 0.5);
-		transition: all 0.5s ease-in-out;
+		transition: all 8.8s ease-in-out;
 		box-sizing: border-box;
 		background: #000;
 	}
@@ -287,7 +484,7 @@ setTimeout(main, 20)
 	.review_card img {
 		width: 100%;
 	}
-
+	 
 	.review_card_body h4 {
 		color: #AD2CA2;
 		font-size: 14px;
@@ -320,13 +517,14 @@ setTimeout(main, 20)
 		padding: 10px;
 		box-sizing: border-box;
 		z-index: 3;
-		background: #444;
+		/* background: #444; */
 	}
 	.arrow {
 		fill: #61ff00;
 		width: 10px;
 		height: 13px;
 	}
+
 
 </style>
 
