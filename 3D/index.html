@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>3D визуализация</title>
+	<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+</head>
+<body>
+	
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+<div class="Tel">
+	<a href="https://telegram.im/@BEPCTKA">
+		<svg enable-background="new 0 0 24 24" height="512" viewBox="0 0 24 24" width="512" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" fill="#039be5" r="12"/><path d="m5.491 11.74 11.57-4.461c.537-.194 1.006.131.832.943l.001-.001-1.97 9.281c-.146.658-.537.818-1.084.508l-3-2.211-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.121l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953z" fill="#fff"/></svg>
+	</a>
+</div>
+<!-- Slider main container -->
+<div class="swiper-container">
+	<!-- Additional required wrapper -->
+	<div class="swiper-wrapper">
+	  <!-- Slides -->
+	  <div class="swiper-slide">
+			<img src="1.jpg" alt="img">
+	  </div>
+	  <div class="swiper-slide">
+		<img src="2.jpg" alt="img">
+	  </div>
+	  <div class="swiper-slide">
+		<img style="max-height: 100%" src="3.jpg" alt="img">
+	  </div>
+	  <div class="swiper-slide">
+		<img src="4.jpg" alt="img">
+	  </div>
+	  <div class="swiper-slide">
+		<img src="5.jpg" alt="img">
+	  </div>
+	  <div class="swiper-slide">
+		<img src="6.jpg" alt="img">
+	  </div>
+	  <div class="swiper-slide">
+		<img src="7.jpg" alt="img">
+	  </div>
+	  <div class="swiper-slide">
+		<img src="8.jpg" alt="img">
+	  </div>
+	  <div class="swiper-slide">
+		<img src="9.jpg" alt="img">
+	  </div>
+	  <div class="swiper-slide">
+		<img src="10.jpg" alt="img">
+	  </div>
+	  <div class="swiper-slide">
+		<img src="11.jpg" alt="img">
+	  </div>
+
+	
+	</div>
+	<!-- If we need pagination -->
+	<div class="swiper-pagination"></div>
+  
+	<!-- If we need navigation buttons -->
+	<div class="swiper-button-prev"></div>
+	<div class="swiper-button-next"></div>
+  
+	<!-- If we need scrollbar -->
+	<div class="swiper-scrollbar"></div>
+  </div>
+
+
+
+  <style>
+	  html, body{
+		  padding: 0;
+		  margin: 0;
+		  position: relative;
+	  }
+	  .Tel {
+			height: 60px;
+			width: 100%;
+			width: 100vw;
+			position: absolute;
+			z-index: 100;
+			padding-top: 10px;
+		}
+		.Tel svg{
+			display: block;
+			height: 50px;
+			width: 50px;
+			margin: auto;	}
+	.swiper-container {
+		width: 100%;
+		max-width: 100%;
+		height: 100vh;
+}
+
+.swiper-slide img{
+	display: block;
+	margin: auto;
+	height: auto;
+	max-height: 100%;
+	max-width: 100%;
+	}
+  </style>
+
+  <script>
+const swiper = new Swiper('.swiper-container', {
+  // Optional parameters
+//   direction: 'vertical',
+  loop: true,
+
+  // If we need pagination
+  pagination: {
+    el: '.swiper-pagination',
+  },
+
+  // Navigation arrows
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+
+  // And if we need scrollbar
+  scrollbar: {
+    el: '.swiper-scrollbar',
+  },
+});
+
+
+
+
+  </script>
+</body>
+</html>
+
+
